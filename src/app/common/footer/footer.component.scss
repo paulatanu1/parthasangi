@@ -1,0 +1,11 @@
+// $text-white:#ffffff;
+@import "../../../styles.scss";
+.footer-wrapper{
+    background-color: $background-fooler;
+    p{
+        text-align: center;
+        margin: 0;
+        color: $text-white;
+       
+    }
+}
