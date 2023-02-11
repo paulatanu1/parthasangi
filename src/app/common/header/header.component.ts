@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { AuthenticationFirebaseService } from '../services/authentication-firebase.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import {MenuItem} from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
   items: MenuItem[] = []
-  constructor() { }
+  username:string ='';
+  password:string = ''
+  constructor(private auth:AuthenticationFirebaseService) { }
 
   ngOnInit(): void {
     this.items = [
@@ -87,7 +90,34 @@ export class HeaderComponent implements OnInit {
 }
 
 login(){
-    console.log('clicked')
+
+    this.username = 'anon1@mailinator.com';
+    this.password = '123456789'
+this.auth.loginWithFire(this.username,this.password).subscribe(
+    (result) =>{
+        console.log(result)
+    },
+    (err) =>{
+        console.log(err)
+    }
+)
+
+}
+logout(){
+    this.auth.logoutFromFire().subscribe(
+        (res)=>{
+            console.log(res)
+
+    })
+}
+
+register(){
+    this.username = 'anon1@mailinator.com';
+    this.password = '123456789'
+    this.auth.registerwithFire(this.username,this.password).then((res) => {
+        console.log(res)
+    })
+    .catch((e) => console.log(e.message));
 }
 
 }
