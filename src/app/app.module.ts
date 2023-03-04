@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+import { SignupComponent } from './common/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    ModalComponent
+    ModalComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

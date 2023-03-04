@@ -5,8 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
-    HomeComponent
-  ],
+    HomeComponent  ],
   imports: [
     CommonModule,
     MenubarModule,
